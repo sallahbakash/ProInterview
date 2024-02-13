@@ -15,10 +15,10 @@ from langchain.vectorstores import FAISS
 import nltk
 from prompts.prompts import templates
 # Audio
-from speech_recognition.openai_whisper import save_wav_file, transcribe
-from audio_recorder_streamlit import audio_recorder
-from aws.synthesize_speech import synthesize_speech
-from IPython.display import Audio
+# from speech_recognition.openai_whisper import save_wav_file, transcribe
+# from audio_recorder_streamlit import audio_recorder
+# from aws.synthesize_speech import synthesize_speech
+# from IPython.display import Audio
 
 
 def load_lottiefile(filepath: str):
@@ -119,37 +119,37 @@ def initialize_session_state_jd():
             memory=st.session_state.jd_memory,
         )
 
-def answer_call_back():
-    with get_openai_callback() as cb:
-        # user input
-        human_answer = st.session_state.answer
-        # transcribe audio
-        if voice:
-            save_wav_file("temp/audio.wav", human_answer)
-            try:
-                input = transcribe("temp/audio.wav")
-                # save human_answer to history
-            except:
-                st.session_state.jd_history.append(Message("ai", "Sorry, I didn't get that."))
-                return "Please try again."
-        else:
-            input = human_answer
+# def answer_call_back():
+#     with get_openai_callback() as cb:
+#         # user input
+#         human_answer = st.session_state.answer
+#         # transcribe audio
+#         if voice:
+#             save_wav_file("temp/audio.wav", human_answer)
+#             try:
+#                 input = transcribe("temp/audio.wav")
+#                 # save human_answer to history
+#             except:
+#                 st.session_state.jd_history.append(Message("ai", "Sorry, I didn't get that."))
+#                 return "Please try again."
+#         else:
+#             input = human_answer
 
-        st.session_state.jd_history.append(
-            Message("human", input)
-        )
-        # OpenAI answer and save to history
-        llm_answer = st.session_state.jd_screen.run(input)
-        # speech synthesis and speak out
-        audio_file_path = synthesize_speech(llm_answer)
-        # create audio widget with autoplay
-        audio_widget = Audio(audio_file_path, autoplay=True)
-        # save audio data to history
-        st.session_state.jd_history.append(
-            Message("ai", llm_answer)
-        )
-        st.session_state.token_count += cb.total_tokens
-        return audio_widget
+#         st.session_state.jd_history.append(
+#             Message("human", input)
+#         )
+#         # OpenAI answer and save to history
+#         llm_answer = st.session_state.jd_screen.run(input)
+#         # speech synthesis and speak out
+#         audio_file_path = synthesize_speech(llm_answer)
+#         # create audio widget with autoplay
+#         audio_widget = Audio(audio_file_path, autoplay=True)
+#         # save audio data to history
+#         st.session_state.jd_history.append(
+#             Message("ai", llm_answer)
+#         )
+#         st.session_state.token_count += cb.total_tokens
+#         return audio_widget
 
 if jd:
     # initialize session states
