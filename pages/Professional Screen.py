@@ -21,10 +21,10 @@ from prompts.prompts import templates
 # from IPython.display import Audio
 
 
-def load_lottiefile(filepath: str):
-    with open(filepath, "r") as f:
-        return json.load(f)
-st_lottie(load_lottiefile("images/welcome.json"), speed=1, reverse=False, loop=True, quality="high", height=300)
+# def load_lottiefile(filepath: str):
+#     with open(filepath, "r") as f:
+#         return json.load(f)
+# st_lottie(load_lottiefile("images/welcome.json"), speed=1, reverse=False, loop=True, quality="high", height=300)
 
 #st.markdown("""solutions to potential errors:""")
 with st.expander("""Why did I encounter errors when I tried to talk to the AI Interviewer?"""):
