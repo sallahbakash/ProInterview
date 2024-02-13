@@ -179,9 +179,9 @@ if jd:
             #     ##answer = audio_recorder(pause_threshold = 2.5, sample_rate = 44100)
             #     #st.warning("An UnboundLocalError will occur if the microphone fails to record.")
             # else:
-            #     answer = st.chat_input("Your answer")
-            # if answer:
-            #     st.session_state['answer'] = answer
+            answer = st.chat_input("Your answer")
+            if answer:
+                 st.session_state['answer'] = answer
                 ##audio = answer_call_back()
         with chat_placeholder:
             for answer in st.session_state.jd_history:
