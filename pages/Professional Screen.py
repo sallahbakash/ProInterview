@@ -15,16 +15,16 @@ from langchain.vectorstores import FAISS
 import nltk
 from prompts.prompts import templates
 # Audio
-from speech_recognition.openai_whisper import save_wav_file, transcribe
-from audio_recorder_streamlit import audio_recorder
-from aws.synthesize_speech import synthesize_speech
-from IPython.display import Audio
+# from speech_recognition.openai_whisper import save_wav_file, transcribe
+# from audio_recorder_streamlit import audio_recorder
+# from aws.synthesize_speech import synthesize_speech
+# from IPython.display import Audio
 
 
-def load_lottiefile(filepath: str):
-    with open(filepath, "r") as f:
-        return json.load(f)
-st_lottie(load_lottiefile("images/welcome.json"), speed=1, reverse=False, loop=True, quality="high", height=300)
+# def load_lottiefile(filepath: str):
+#     with open(filepath, "r") as f:
+#         return json.load(f)
+# st_lottie(load_lottiefile("images/welcome.json"), speed=1, reverse=False, loop=True, quality="high", height=300)
 
 st.markdown("""solutions to potential errors:""")
 with st.expander("""Why did I encounter errors when I tried to talk to the AI Interviewer?"""):
