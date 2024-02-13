@@ -176,13 +176,13 @@ if jd:
         with answer_placeholder:
             voice: bool = st.checkbox("I would like to speak with AI Interviewer")
             if voice:
-                answer = audio_recorder(pause_threshold = 2.5, sample_rate = 44100)
+                ##answer = audio_recorder(pause_threshold = 2.5, sample_rate = 44100)
                 #st.warning("An UnboundLocalError will occur if the microphone fails to record.")
             else:
                 answer = st.chat_input("Your answer")
             if answer:
                 st.session_state['answer'] = answer
-                #audio = answer_call_back()
+                ##audio = answer_call_back()
         with chat_placeholder:
             for answer in st.session_state.jd_history:
                 if answer.origin == 'ai':
