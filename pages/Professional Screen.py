@@ -141,7 +141,7 @@ def answer_call_back():
         # OpenAI answer and save to history
         llm_answer = st.session_state.jd_screen.run(input)
         # speech synthesis and speak out
-        audio_file_path = synthesize_speech(llm_answer)
+        #audio_file_path = synthesize_speech(llm_answer)
         # create audio widget with autoplay
         audio_widget = Audio(audio_file_path, autoplay=True)
         # save audio data to history
