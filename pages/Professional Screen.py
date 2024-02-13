@@ -143,13 +143,13 @@ def answer_call_back():
         # speech synthesis and speak out
         #audio_file_path = synthesize_speech(llm_answer)
         # create audio widget with autoplay
-        audio_widget = Audio(audio_file_path, autoplay=True)
+        #audio_widget = Audio(audio_file_path, autoplay=True)
         # save audio data to history
         st.session_state.jd_history.append(
             Message("ai", llm_answer)
         )
         st.session_state.token_count += cb.total_tokens
-        return audio_widget
+        #return audio_widget
 
 if jd:
     # initialize session states
