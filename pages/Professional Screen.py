@@ -14,6 +14,11 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 import nltk
 from prompts.prompts import templates
+
+import os  
+#do this to load the env variables
+from dotenv import load_dotenv
+load_dotenv()
 # Audio
 # from speech_recognition.openai_whisper import save_wav_file, transcribe
 # from audio_recorder_streamlit import audio_recorder
