@@ -24,11 +24,6 @@ from prompts.prompts import templates
 
 #azure open ai
 
-openai.api_type = "azure"
-openai.api_base = "https://evaluateai.openai.azure.com/"
-openai.api_version = "2023-07-01-preview"
-openai.api_key = ""
-
 # def load_lottiefile(filepath: str):
 #     with open(filepath, "r") as f:
 #         return json.load(f)
