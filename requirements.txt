@@ -12,4 +12,3 @@ streamlit-lottie
 faiss-cpu
 boto3
 Ipython
-dotenv
