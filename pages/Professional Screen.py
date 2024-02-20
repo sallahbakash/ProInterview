@@ -15,10 +15,7 @@ from langchain.vectorstores import FAISS
 import nltk
 from prompts.prompts import templates
 
-import os  
-#do this to load the env variables
-from dotenv import load_dotenv
-load_dotenv()
+
 # Audio
 # from speech_recognition.openai_whisper import save_wav_file, transcribe
 # from audio_recorder_streamlit import audio_recorder
@@ -30,7 +27,7 @@ load_dotenv()
 openai.api_type = "azure"
 openai.api_base = "https://evaluateai.openai.azure.com/"
 openai.api_version = "2023-07-01-preview"
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "b96836a1341d4fc0b00260c48adf72f3"
 
 # def load_lottiefile(filepath: str):
 #     with open(filepath, "r") as f:
