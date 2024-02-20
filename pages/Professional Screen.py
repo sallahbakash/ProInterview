@@ -20,6 +20,12 @@ from prompts.prompts import templates
 # from aws.synthesize_speech import synthesize_speech
 # from IPython.display import Audio
 
+#azure open ai
+
+openai.api_type = "azure"
+openai.api_base = "https://evaluateai.openai.azure.com/"
+openai.api_version = "2023-07-01-preview"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # def load_lottiefile(filepath: str):
 #     with open(filepath, "r") as f:
